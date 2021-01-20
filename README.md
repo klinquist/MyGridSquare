@@ -15,7 +15,9 @@ I wrote this for two reasons:
 1) Many new hams did not know their grid square.  Rather than googling for a random web page - or requiring an app - it's easy to tell someone "Just go to MY GRID SQUARE DOT COM!"
 2) For mobile/roving contests, this page will constantly update, showing you if your grid square has changed. If your device reports heading, it'll also show you what grid square you are heading towards (and the approxmiate distance to it!)
 
-This is 100% local/browser based HTML & JavaScript.  Once the page loads, your phone no longer needs connectivity.  Your location is not sent to any servers and no analytics are collected.
+This is 100% local/browser based HTML & JavaScript.  Your location is not sent to any servers and no analytics are collected.
+
+If you use the "add to home screen" feature of your mobile device, it'll be cached for fully offline use.
 
 ### Not working?
 
