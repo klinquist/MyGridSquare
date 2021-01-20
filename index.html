@@ -1,9 +1,12 @@
 <!DOCTYPE html>
+<html lang="en" manifest="index.manifest">
 <head>
 
     <meta name="viewport" content="width=device-width">
     <meta name="application-name" content="MyGridSquare">
     <meta name="apple-mobile-web-app-title" content="MyGridSquare">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
     <style>
         body {
             color: white; 
@@ -35,6 +38,9 @@
         }
         .attrib a {
             color: gray 
+        }
+        #title {
+            padding-top: 30px;
         }
     </style>
     <title>Get your gridsquare</title>
@@ -143,7 +149,11 @@
             document.getElementById("title").innerHTML = 'Unable to get location: ' + error.message
         }
         let lastUpdate;
+        
 
+        function roundToDigits(num, n){
+            return num.toFixed(n)
+        }
         function updatePosition(position) {
             document.getElementById("title").innerHTML = ''
             lastUpdate = new Date().getTime();
@@ -155,7 +165,7 @@
             if (position.coords.altitude){
                 altitude = Math.round(position.coords.altitude *3.28084).toString() + ' ft / ' + Math.round(position.coords.altitude).toString() + ' m'
             }
-            document.getElementById("title").innerHTML = position.coords.latitude + "," + position.coords.longitude + "<br>altitude: " + (altitude || 'unknown')
+            document.getElementById("title").innerHTML = roundToDigits(position.coords.latitude,6) + "," + roundToDigits(position.coords.longitude,6) + "<br>altitude: " + (altitude || 'unknown')
             document.getElementById("gridsq").innerText = gridSquare
             document.getElementById("gridsqsmall").innerText = "(" + fullgrid + ")"
             let heading = position.coords.heading ? Math.round(position.coords.heading) : null;
@@ -191,3 +201,5 @@
     </script>
 
 </body>
+
+</html> 

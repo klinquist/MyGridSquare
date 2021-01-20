@@ -1,0 +1,11 @@
+CACHE MANIFEST
+CACHE:
+#     11-17-2020        appcache is fallback if browser does not support service worker
+#			version 2.4	
+#
+https://mygridsquare.com/geolib.js
+https://mygridsquare.com/NpSleep.min.js
+https://mygridsquare.com/index.html
+
+NETWORK:
+*
